@@ -70,7 +70,11 @@ const Home = () => {
     const users = useSelector(state => state.users.users)
 
     useEffect(() => {
-        dispatch(fetchUsers())
+        function getAllUsers() {
+            dispatch(fetchUsers())
+        }
+
+        getAllUsers()
     }, [])
 
     const handleUserDelete = (id, name) => {

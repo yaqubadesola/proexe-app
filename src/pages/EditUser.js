@@ -109,7 +109,11 @@ const EditUser = () => {
     }
 
     useEffect(() => {
-        dispatch(getUser(id))
+        function getSingleUser() {
+            dispatch(getUser(id))
+        }
+
+        getSingleUser()
     }, [])
 
     useEffect(() => {
