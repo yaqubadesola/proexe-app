@@ -178,7 +178,7 @@ const EditUser = () => {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography className={headerclasses.title} variant="h6" noWrap>
-                            <h3>USER'S FORM</h3>
+                            <h3>EDITING FORM</h3>
                         </Typography>
                         <div className={headerclasses.search}>
                             {/* <div className={classes.searchIcon}> */}
@@ -236,7 +236,7 @@ const EditUser = () => {
                         />
                         <br /> <br />
                         <b style={{ color: 'red' }}>{state.cityErr}</b><br />
-                        <Button style={{ width: "200px", textAlign: "center" }} variant="contained" color="primary" type="submit" ><b>EDIT USER</b></Button>
+                        <Button style={{ width: "200px", textAlign: "center" }} variant="contained" color="primary" type="submit" ><b>UPDATE</b></Button>
 
                     </form>
                 </div>

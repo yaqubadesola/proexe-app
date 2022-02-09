@@ -155,7 +155,7 @@ const AddNewUser = () => {
                 <AppBar position="static">
                     <Toolbar>
                         <Typography className={headerclasses.title} variant="h6" noWrap>
-                            <h3>USER'S ADD FORM</h3>
+                            <h3>ADD FORM</h3>
                         </Typography>
                         <div className={headerclasses.search}>
                             {/* <div className={classes.searchIcon}> */}
