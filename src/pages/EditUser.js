@@ -110,11 +110,11 @@ const EditUser = () => {
 
     useEffect(() => {
         function getSingleUser(id) {
-            dispatch(getUser(id))
+            dispatch(() => getUser(id))
         }
 
         getSingleUser(id)
-    }, [])
+    }, [id])
 
     useEffect(() => {
         if (user) {
