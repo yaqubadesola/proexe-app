@@ -108,11 +108,11 @@ const EditUser = () => {
         setState({ ...state, [name]: value })
     }
 
-    useEffect(() => {
-        function getSingleUser(id) {
-            dispatch(() => getUser(id))
-        }
+    function getSingleUser(id) {
+        return dispatch(getUser(id))
+    }
 
+    useEffect(() => {
         getSingleUser(id)
     }, [id])
 
