@@ -114,7 +114,7 @@ const EditUser = () => {
 
     useEffect(() => {
         getSingleUser(id)
-    }, [id])
+    })
 
     useEffect(() => {
         if (user) {

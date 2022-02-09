@@ -68,14 +68,12 @@ const Home = () => {
     let dispatch = useDispatch()
     let navigate = useNavigate()
     const users = useSelector(state => state.users.users)
-
+    function getAllUsers() {
+        dispatch(fetchUsers())
+    }
     useEffect(() => {
-        function getAllUsers() {
-            dispatch(fetchUsers())
-        }
-
         getAllUsers()
-    }, [])
+    })
 
     const handleUserDelete = (id, name) => {
         if (window.confirm(`Are you sure you want to delete ${name} ?`)) {
