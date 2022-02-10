@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -93,6 +93,7 @@ const EditUser = () => {
     let { id } = useParams()
     let dispatch = useDispatch()
     let navigate = useNavigate()
+    let getOneUser = useRef()
 
     const user = useSelector(state => state.users.user)
 
@@ -112,9 +113,10 @@ const EditUser = () => {
         return dispatch(getUser(id))
     }
 
+    getOneUser.current = getSingleUser
     useEffect(() => {
-        getSingleUser(id)
-    })
+        getOneUser.current(id)
+    },[id])
 
     useEffect(() => {
         if (user) {

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { withStyles, makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -62,18 +62,22 @@ const useButtonStyles = makeStyles((theme) => ({
         },
     },
 }));
-const Home = () => {
+const Home = (props) => {
+    let tempUsers = useRef()
     const classes = useStyles();
     const buttonClasses = useButtonStyles()
     let dispatch = useDispatch()
     let navigate = useNavigate()
     const users = useSelector(state => state.users.users)
+
     function getAllUsers() {
         dispatch(fetchUsers())
     }
+
+    tempUsers.current = getAllUsers
     useEffect(() => {
-        getAllUsers()
-    })
+        tempUsers.current()
+    },[props])
 
     const handleUserDelete = (id, name) => {
         if (window.confirm(`Are you sure you want to delete ${name} ?`)) {
